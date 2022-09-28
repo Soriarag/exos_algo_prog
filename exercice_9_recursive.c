@@ -1,20 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+
 #define TRUE 1
 #define FALSE 0
 
-typedef struct t_Noeud
-{
-    struct t_Noeud *parent;
-
-} Noeud;
-
-
-typedef struct
-{
-    /* data */
-} Pile;
-
+// version recursive de l'exo 9  !!!stack overflow sur les exemples!!!
 
 int check_parentheses(char **it, char parenthese)
 {
