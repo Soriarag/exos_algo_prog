@@ -6,13 +6,13 @@
 int brute_force(char *chaine_1, char *chaine_2){
     if (*chaine_1 == '\n')
     {
-        return strlen(chaine_2); // deletions
+        return strlen(chaine_2) - 1 ; // deletions et correction pour le \n
     }else if (*chaine_2 == '\n')
     {
-        return strlen(chaine_1); // insertions
+        return strlen(chaine_1) - 1; // insertions et correction pour le \n
     }
     else if (*chaine_1 == *chaine_2){
-        return brute_force(chaine_1 + 1, chaine_2 + 1); //rien a faire
+        return brute_force(chaine_1 + 1, chaine_2 + 1); //rien a faire 
     }
     else
     {

@@ -14,11 +14,11 @@ int memoization(char *chaine_1, char *chaine_2, int index_1, int index_2)
 
         if (chaine_1[index_1] == '\n')
         {
-            dp[index_1][index_2] = strlen(chaine_2) - index_2; // deletions
+            dp[index_1][index_2] = strlen(chaine_2) - index_2 - 1; // deletions et correction pour le \n
         }
         else if (chaine_2[index_2] == '\n')
         {
-            dp[index_1][index_2] = strlen(chaine_1) - index_1; // insertions
+            dp[index_1][index_2] = strlen(chaine_1) - index_1 - 1; // insertions et correction pour le \n
         }
         else if (chaine_1[index_1] == chaine_2[index_2])
         {
@@ -56,5 +56,5 @@ int main(int argc, char const *argv[])
     }
     
 
-    printf("minimal modifications = %d", memoization(mot_a, mot_b, 0, 0));
+    printf("minimal modifications = %d\n", memoization(mot_a, mot_b, 0, 0));
 }
